@@ -1,0 +1,8 @@
+language: csharp
+solution: ModelBuilder.sln
+mono: none
+dotnet: 1.0.4
+dist: trusty
+script:
+  - dotnet restore
+  - dotnet test ./ModelBuilder.Tests/ModelBuilder.Tests.csproj
