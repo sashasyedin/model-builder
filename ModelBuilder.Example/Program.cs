@@ -1,12 +1,18 @@
 ﻿using System;
+using ModelBuilder.Example.Services;
+using Newtonsoft.Json;
 
 namespace ModelBuilder.Example
 {
-    class Program
+    sealed class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var discounts = DiscountService.ListServicesDiscounts();
+            var json = JsonConvert.SerializeObject(discounts, Formatting.Indented);
+
+            Console.WriteLine(json);
+            Console.ReadKey();
         }
     }
 }

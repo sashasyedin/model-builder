@@ -39,7 +39,9 @@ namespace ModelBuilder.Example.Services
             {
                 service.ID,
                 service.Name,
-                PropName = service.Name.ToLower()
+                PropName = service.Name
+                    .Replace(" ", string.Empty)
+                    .ToLower()
             });
 
             var companies = _dummyCompanies.Select(company => new
